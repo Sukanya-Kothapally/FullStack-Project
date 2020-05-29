@@ -1,4 +1,14 @@
-pip ==18.1
 flask ==1.0.2
+click ==7.0
+beautifulsoup4 ==4.6.3
+
+get ==1.0.3
+pip ==18.1
+post ==1.0.2
+public ==1.0.3
+query-string ==1.0.2
 request ==1.0.2
 requests ==2.19.1
+scraper ==0.1.0
+selenium ==3.14.1
+urllib3 ==1.23
