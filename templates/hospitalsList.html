@@ -1,0 +1,37 @@
+<html>
+<head><title>LOACTION</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "/static/hospitalsList.css" >
+</head>
+<body>
+
+<div class="container">
+
+    <table class="table" >
+
+        {% for i in res %}
+        <tr class="table-row">
+            <td> {{ i[0] }} </td>
+        </tr>
+        <tr class="table-row">
+            <td> Address: {{ i[1] }} </td>
+        </tr>
+        <tr class="table-row">
+            <td> Total number of user ratings: {{ i[2] }} </td>
+        </tr>
+        <tr class="table-row">
+            <td> Rating: {{ i[3] }} </td>
+        </tr>
+        <tr class="table-row">
+            <td><a href="https://www.google.com/maps/search/?api=1&query={{ i[0] }}">Follow me for directions</a> </td>
+        </tr>
+        {% endfor %}
+     </table>
+</div>
+<!--<div>{{res}}</div>-->
+</body>
+</html>
