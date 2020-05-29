@@ -13,21 +13,21 @@
 
     <table class="table" >
 
-        {% for val in res %}
+        {% for i in res %}
         <tr class="table-row">
-            <td> {{ val[0] }} </td>
+            <td> {{ i[0] }} </td>
         </tr>
         <tr class="table-row">
-            <td> Address: {{ val[1] }} </td>
+            <td> Address: {{ i[1] }} </td>
         </tr>
         <tr class="table-row">
-            <td> Total number of user ratings: {{ val[2] }} </td>
+            <td> Total number of user ratings: {{ i[2] }} </td>
         </tr>
         <tr class="table-row">
-            <td> Rating: {{ val[3] }} </td>
+            <td> Rating: {{ i[3] }} </td>
         </tr>
         <tr class="table-row">
-            <td><a href="https://www.google.com/maps/search/?api=1&query={{ val[0] }}">Follow me for directions</a> </td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query={{ i[0] }}">Follow me for directions</a> </td>
         </tr>
         {% endfor %}
      </table>
