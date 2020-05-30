@@ -2,8 +2,8 @@ import json
 from flask import Flask, render_template, request
 from flask import render_template,make_response
 from flask import Flask, request, redirect, url_for
-
 import googlemaps
+import get_symptoms as get_sym
 
 app = Flask(__name__)
 
@@ -11,6 +11,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
+
 
 #button2 home page
 @app.route('/live+/location/', methods=['POST','GET'])
@@ -31,5 +32,10 @@ def locationHospital():
         return render_template("hospitalsList.html", res=hospitalResult)
 
 
+@app.route('/medical_conditions/')
+def two():
+    symptoms = get_sym.fetch_symptoms()
+    return render_template("medical_conditions.html", symptoms=symptoms)
+  
 if __name__ == '__main__':
     app.run(debug=True)
