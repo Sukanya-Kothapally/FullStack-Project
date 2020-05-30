@@ -1,0 +1,20 @@
+body{
+    background-image: url("button2BG.png");
+
+}
+.container
+{
+    margin: 0 auto;
+    padding-top: 150px;
+}
+.form{
+    background-color: black;
+    text-align: center;
+    height: 50%;
+    width:50%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: white;
+}
