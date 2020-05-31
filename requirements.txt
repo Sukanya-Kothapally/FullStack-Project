@@ -2,3 +2,4 @@ pip ==18.1
 flask ==1.0.2
 request ==1.0.2
 requests ==2.19.1
+googlemaps==3.0.2

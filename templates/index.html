@@ -9,7 +9,7 @@
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"   crossorigin="anonymous"></script>
-        <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "/static/css/index.css" >
     </head>
     <body onload="initialise()">
         <br>
@@ -22,17 +22,12 @@
                 <h2>LIVE+</h2>
                 <div><i>LIVE+ is a symptom checking application, where the user gives the symptom, along with his age.<br> The Application returns the list of diseases for the symptoms mentioned.<br>Please click one of the buttons below!!!!</i></div>
                 <br><br>
-                <button type="button"  class="btn" id="first"  onclick="location.href='/api/one';">API 1</button>
-                <button type="button"  class="btn" id="second"  onclick="location.href='/api/two';">API 2</button>
-                <button type="button"  class="btn" id="third"  onclick="location.href='/api/four';">API 3</button>
-                <button type="button"  class="btn" id="fourth"   onclick="location.href='/api/five';">API 4</button>
-
-
+                <button type="button"  class="btn" id="first" style="height:200px;width:200px" onclick="location.href='/live+/one';">API 1 </br> <span> This api gives you the information about the nearest doctors which could have</span></button>
+                <button type="button"  class="btn" id="second" style="height:200px;width:200px" onclick="location.href='/live+/location';">Click here >> </br> <span>To find list of hospitals near by your location</span></button>
+                <button type="button"  class="btn" id="third" style="height:200px;width:200px" onclick="location.href='/live+/recreation';"><b> Find Recreational Parks </b> </br> <span>To find list of parks or trails near by your location</span></button>
             </center>
         </div>
-        <center><img src="static/images/plusicon.jpg" alt="plUSSYMBOL" id="plusimg"></center>
+        <center><img src="static/images/plusicon.jpg" alt="plussymbol" id="plusimg"></center>
         <br>
     </body>
 </html>
-
-

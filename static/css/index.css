@@ -1,44 +1,40 @@
-
 #first{
     text-align: top;
     background-color: #f5b1b1;
-
 }
 #first:hover{
     background-color:rgb(214, 84, 61);
 }
 #second{
-   
+
     background-color: #c1f0a7;
     text-align: center;
 }
 #second:hover{
     background-color: rgb(169, 238, 113);
- 
+
 }
 
 #third{
-   
+
     background-color: #9ca1f0;
     text-align: center;
 }
 #third:hover{
     background-color:#5562f1;
-    
+
 }
 
 #fourth{
-   
+
     background-color: #e9eb93;
     text-align: center;
 }
 #fourth:hover{
     background-color:#f0de42;
-    
+
 }
 #plusimg{
     width: 150px;
     height: 150px;
-
-
 }
