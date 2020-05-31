@@ -32,10 +32,10 @@ def locationHospital():
         return render_template("hospitalsList.html", res=hospitalResult)
 
 
-@app.route('/medical_conditions/')
+@app.route('/live+/symptom-checker')
 def two():
     symptoms = get_sym.fetch_symptoms()
-    return render_template("medical_conditions.html", symptoms=symptoms)
+    return render_template("symptom-checker.html", symptoms=symptoms)
   
 if __name__ == '__main__':
     app.run(debug=True)
