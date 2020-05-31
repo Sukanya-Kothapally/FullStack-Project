@@ -30,5 +30,10 @@ def locationHospital():
         resultsdata = json.loads(Dictstr)
         return render_template("hospitalsList.html", res=resultsdata, locationfromhtml=locationfromhtml)
 
+@app.route('/live+/recipe/', methods=['POST','GET'])
+def giveDetails():
+    return render_template("recipe.html")
+
+
 if __name__ == '__main__':
     app.run(debug=True)
