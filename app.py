@@ -30,11 +30,5 @@ def locationHospital():
         resultsdata = json.loads(Dictstr)
         return render_template("hospitalsList.html", res=resultsdata, locationfromhtml=locationfromhtml)
 
-
-
-
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
