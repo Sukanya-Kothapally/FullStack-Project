@@ -1,3 +1,4 @@
+
 .center {
   background: black;
   max-height: 350px;
@@ -46,7 +47,6 @@ position: absolute;
 #first{
     text-align: top;
     background-color: #f5b1b1;
-
 }
 #first:hover{
     background-color:rgb(214, 84, 61);
@@ -62,7 +62,6 @@ position: absolute;
 }
 
 #third{
-
     background-color: #9ca1f0;
     text-align: center;
 }
@@ -83,6 +82,4 @@ position: absolute;
 #plusimg{
     width: 150px;
     height: 150px;
-
-
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Park Locations</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel = "stylesheet" type = "text/css" href = "/static/css/recreation.css" >
+
+</head>
+<body class="background">
+ <header>
+        <div>
+            <a href="/live+/recreation/" class="home" id="home"><button class="homebtn"><i class="fa fa-home"></i> Home </button></a>
+        </div>
+ </header>
+ <div class="container">
+     <table class="table">
+         <h3> Parks or Trails near {{locationfromhtml}}....!!!</h3><br>
+         <tr class="headings">
+             <th>Park Name</th>
+             <th>Address</th>
+             <th>Ratings</th>
+             <th>Directions</th>
+
+         </tr>
+         {% for val in resultsdata %}
+         <tr>
+            <td> {{ val[0] }} </td>
+            <td> {{ val[1] }} </td>
+             <td> {{ val[2] }} </td>
+             <td><a href="https://www.google.com/maps/search/?api=1&query={{ val[0] }}">Click Here</a> </td>
+         </tr>
+        {% endfor %}
+     </table>
+ </div>
+<!--<div>{{location}}</div>-->
+</body>
+</html>
+
