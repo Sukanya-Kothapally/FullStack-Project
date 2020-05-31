@@ -9,7 +9,7 @@ symptoms = {}   # dictionary that will store the data as name:id
 symptoms_name = []   # This list of all sorted symptom names
 ids = []
 
-def fetch_symtoms():
+def fetch_symptoms():
     url = config.priaid_health_url + '/symptoms?token=' + authKey + '&format=json&language=en-gb'
     results_symptoms = urllib.request.urlopen(url).read()
     json_symptoms = ast.literal_eval(results_symptoms.decode("utf-8"))    # converting the byte string to string type

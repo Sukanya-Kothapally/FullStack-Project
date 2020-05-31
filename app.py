@@ -12,36 +12,19 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-#button2 home page
-@app.route('/live+/location/', methods=['POST','GET'])
-def enterLocation():
-        return render_template("locationform.html")
-
-#button2 resultspage
-@app.route("/live+/hospitalsresult/",methods=['POST','GET'])
-def locationHospital():
-        googleMaps = googlemaps.Client(key='AIzaSyAQO23hWoMorbHodnChbFZ42g-BiGEcSqM') #connecting to google
-        location = request.form["location"]  # getting address entered by user in form
-        geocoding_result = googleMaps.geocode(location)
-
-        locationLatLng=[(float(i['geometry']['location']['lat']), float(i['geometry']['location']['lng'])) for i in geocoding_result] #extracting latitude and longitude using the address enetered by user
-        result=googleMaps.places(query="hospital", location=locationLatLng[0], radius = '100')['results'] #getting the name of hospitals near the address entered by user
-
-        hospitalResult=[[str(r['name']),str(r['formatted_address']),str(r['user_ratings_total']), str(r['rating'])] for r in result]
-        return render_template("hospitalsList.html", res=hospitalResult)
-
-
-@app.route('/medical_conditions/')
+@app.route('/live+/symptom-checker')
 def two():
     symptoms = get_sym.fetch_symptoms()
-    return render_template("medical_conditions.html", symptoms=symptoms)
+    return render_template("symptom-checker.html", symptoms=symptoms)
+
+
 
 @app.route('/live+/recreation/', methods=['POST','GET'])
-def location():
+def locationforparks():
         return render_template("recreationform.html")
 
 @app.route("/live+/recreationdata/",methods=['POST','GET'])
-def map_doc():
+def parks_data():
         recDict=rec.fetch()
         locationfromhtml=rec.locationfunction()
         if(recDict=="No Location given, Please give a place!!!"):
