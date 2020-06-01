@@ -4,6 +4,7 @@ from flask import render_template,make_response
 from flask import Flask, request, redirect, url_for
 import googlemaps
 import get_symptoms as get_sym
+import symptoms_result as sym_res
 
 app = Flask(__name__)
 
@@ -33,9 +34,16 @@ def locationHospital():
 
 
 @app.route('/live+/symptom-checker')
-def two():
+def symptomChecker():
     symptoms = get_sym.fetch_symptoms()
     return render_template("symptom-checker.html", symptoms=symptoms)
+
+@app.route('/live+/symptom-checker-result', methods=['POST'])
+def symptomCheckerResult():
+    data = request.get_json()
+    fetch_api_result = sym_res.api_symptom_result(data["id"], data["gender"], data["year"])
+    fetch_api_result_dict = json.dumps(fetch_api_result)
+    return fetch_api_result_dict
   
 if __name__ == '__main__':
     app.run(debug=True)
