@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Live+|Symptom-checker</title>
+        <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="{{ url_for('static', filename='css/symptom-checker.css') }}" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+        <style>
+            table tbody tr td {
+                font-size: 17px;
+            }
+        </style>
+        <script>
+            var gender, year, ID;
+            function myFunction(value) {
+                gender = value;
+            }
+            function func()
+            {
+                $("#tbody tr").remove();
+                year = document.getElementById('year').value;
+                ID = document.getElementById('ID').value;
+                var dict=['{"id":"' + ID + '","year":"' + year + '","gender":"' + gender + '"}'];
+                j = JSON.parse(dict);
+                $.ajax({
+                        type: "POST",
+                        url: '/live+/symptom-checker-result',
+                        contentType: "application/json",
+                        data: JSON.stringify(j),
+                        dataType: "json",
+                        success: function(response) {
+                            row = "";
+                            for(var element in response)
+                            {
+                                row += "<tr><td>" + response[element] + element + "</td></tr>";
+                            }
+                            $('#tbody').append(row);
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/symptom-checker1.jpg" alt="" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                                <h2>Symptom-Checker</h2>
+                            <p><i>Symptom Checker is designed to help you understand what your medical symptoms could mean,<br> and provide you with preliminary diagnosis.
+                          </i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function getId() {
+                var result = [];
+                var options = document.getElementById("mySelect");
+                var opt;
+                for (var i=0, iLen=options.length; i<iLen; i++) {
+                    opt = options[i];
+                    if (opt.selected) {
+                        result.push(opt.value || opt.text);
+                    }
+                }
+                var ids=result.join(',');
+                $("#ID").val(ids);
+            }
+        </script>
+        <form class="main-form">
+            <div class="md-form">
+                <label for="mySelect" class="">Select Symptoms:</label>
+                <select id="mySelect" onchange="getSelectValue();" class="form-control selectpicker" multiple data-live-search="true" tabindex="0">
+                        {% for name, id in symptoms.items() %}
+                            <option data-tokens={{name}} value={{id}}>{{name}}</option>
+                        {% endfor %}
+                </select>
+            </div>
+            <br>
+            <div class="md-form">
+                 <button type="button" class="btn submitButton addButton" onclick="getId()">Add symptom</button>
+            </div>
+            <br>
+            <div class="md-form" hidden >
+                <input type="text" id="ID" class="form-control">
+                <label for="ID" class="">Symptom ID:</label>
+            </div>
+            <div class="md-form">
+                <label for="year" class="">Year of Birth:</label>
+                <input type="number" id="year" class="form-control">
+            </div>
+            <br>
+            <form class="form-group">
+
+                <fieldset id="gender" class="form-group">
+                    <label for="male" class="">
+                    <input type="radio" id="male" name="gender" value="male" onclick="myFunction(this.value)"> Male
+                    </label>
+                    <label for="female" class="">
+                    <input type="radio" id="female" name="gender" value="female" onclick="myFunction(this.value)"/> Female
+                    </label><br>
+                </fieldset>
+                <br>
+
+            </form>
+            <center>
+            <div class="md-form">
+                <button class="btn btn-primary-outline"  value="Submit" onclick="func()">Submit</button>
+            </div>
+            </center>
+        </form>
+        <table style="width: 100%" class="table-striped">
+            <thead>
+                <tr>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </body>
+</html>
