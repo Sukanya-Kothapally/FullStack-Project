@@ -1,33 +1,40 @@
 .center {
   background: black;
-  max-height: 350px;
+  max-height: 400px;
   color: white;
   font-weight: bold;
+  font-family:Andale Mono, monospace;
+}
+.center h1{
+font-family:Stencil Std, fantasy;
+font-size:500%;
 }
 .center img{
  opacity: 0.5;
  height: auto;
  display:block;
-  width: 100%;
+ width: 100%;
 }
 .center img,
-.half-left  img,
-.half-right img {
+ {
   height: auto;
   width: 100%;
 }
+@media (min-width: 481px){
 .center{
     overflow: hidden;
     padding: 0;
     position: responsive;
 }
 .center  > .container{
-position: absolute;
+    position: absolute;
     top: 0;
 
 }
-.center > .container { right: 0;}
-
+.center > .container {
+    right: 0;
+}
+}
 #first{
     text-align: top;
     background-color: #f5b1b1;
@@ -187,7 +194,7 @@ position: absolute;
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 10px 7px 5px 10px;
+  margin: 10px 6px 6px 6px;
   position: relative;
   float: left;
   padding-bottom: 50px;
@@ -217,7 +224,7 @@ a:hover {
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 10px 7px 5px 10px;
+  margin: 10px 6px 6px 6px;
   position: relative;
   float: left;
 }
