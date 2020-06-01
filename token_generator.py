@@ -5,6 +5,8 @@ import hmac
 import json
 
 # Generating token for APIMEDIC.
+
+
 def tokenGen():
     username = config.username
     password = config.password

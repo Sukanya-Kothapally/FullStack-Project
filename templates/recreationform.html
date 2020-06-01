@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>SEARCH</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+   <link rel = "stylesheet" type = "text/css" href = "/static/css/recreationform.css" >
+</head>
+<body>
+   <!-- <header>
+        <div>
+            <a href="/" class="home" id="home"><button class="homebtn"><i class="fa fa-home"></i> Home </button></a>
+        </div>
+    </header>-->
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/live+.png" alt="heartimage" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>To stay healthy keep yourself active, Find parks and trails by entering a location below...!!!</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container2">
+        <form class="form-group" action="/live+/recreationdata/" method="POST">
+<!--    <form class="form-group" autocomplete="off" action="/live+/recreationdata/" method="POST">-->
+            <h2>Find Parks and Trails </h2>
+            <label for ="location"></label>
+            <input type="text" name="location" class="form-control" placeholder="Enter your location" ></input><br>
+            <button type="submit" class="button"><b>Submit</b></button><br><br>
+            <div id="noloc">{{recDict}}</div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,7 +1,6 @@
 flask ==1.0.2
 click ==7.0
 beautifulsoup4 ==4.6.3
-googlemaps
 get ==1.0.3
 pip ==18.1
 post ==1.0.2
@@ -12,3 +11,5 @@ requests ==2.20.1
 scraper ==0.1.0
 selenium ==3.14.1
 urllib3 ==1.23
+googlemaps==3.0.2
+
