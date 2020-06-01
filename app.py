@@ -3,8 +3,10 @@ from flask import Flask, render_template, request
 from flask import render_template,make_response, jsonify
 from flask import Flask, request, redirect, url_for
 import hospitals as hs
+import nutrition as nt
+import mealplan as mp
 
-import googlemaps
+
 
 app = Flask(__name__)
 
@@ -30,9 +32,19 @@ def locationHospital():
         resultsdata = json.loads(Dictstr)
         return render_template("hospitalsList.html", res=resultsdata, locationfromhtml=locationfromhtml)
 
-@app.route('/live+/recipe/', methods=['POST','GET'])
+@app.route('/live+/nutrition/', methods=['POST','GET'])
 def giveDetails():
-    return render_template("recipe.html")
+    # return render_template("recipe.html")
+    return render_template("nutrition.html")
+
+
+
+@app.route('/live+/nutrition/result', methods=['POST', 'GET'])
+def giveResult():
+    data = nt.nutrition()
+    # data = rp.nutrition()
+    #
+    return render_template("nutritionResult.html", res = data)
 
 
 if __name__ == '__main__':
