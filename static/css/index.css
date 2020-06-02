@@ -194,9 +194,9 @@ font-size:500%;
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 10px 6px 6px 6px;
+  margin: 10px 6px 6px 8px;
   position: relative;
-  float: left;
+  display: inline-block;
   padding-bottom: 50px;
 }
 a:hover {
@@ -226,5 +226,8 @@ a:hover {
   height: 200px;
   margin: 10px 6px 6px 6px;
   position: relative;
-  float: left;
+  display: inline-block;
+}
+.flex-container{
+justify-content: center;
 }
