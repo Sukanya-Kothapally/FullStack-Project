@@ -1,40 +1,50 @@
+body{
+    font-family:monospace;
+}
+
 .center {
-  max-height: 300px;
-  color: black;
-  font-weight: bold;
-  font-family:Andale Mono, monospace;
+    max-height: 300px;
+    color: black;
+    font-weight: bold;
+    font-family:Andale Mono, monospace;
 }
+
 .center img{
- opacity:0.6;
- height: auto;
- display:block;
-  width: 100%;
+    opacity:0.6;
+    height: auto;
+    display:block;
+    width: 100%;
 }
+
 .center h1{
-font-family:Stencil Std, fantasy;
-font-size:500%;
+    font-family:Stencil Std, fantasy;
+    font-size:500%;
 }
+
 .center img,
 .half-left  img,
 .half-right img {
-  height: auto;
-  width: 100%;
+    height: auto;
+    width: 100%;
 }
+
 .center{
     overflow: hidden;
     padding: 0;
     position: responsive;
 }
-.center  > .container{
-position: absolute;
-    top: 0;
 
+.center  > .container{
+    position: absolute;
+    top: 0;
 }
-.center > .container { right: 0;}
+
+.center > .container {
+    right: 0;
+}
 
 .main-form{
     background-color: white;
-
     height: 50%;
     width:50%;
     margin: 0 auto;
@@ -43,25 +53,87 @@ position: absolute;
     padding-right: 100px;
     color: black;
 }
-input + label {
-           display: inline;
-}
-
 
 .addButton{
-background-color:rgb(255, 218, 224);
+    background-color:rgb(255, 218, 224);
 }
-.btn-primary-outline{
-background-color:rgb(125, 207, 255);
 
+.addButton:hover{
+    background-color:rgb(245, 218, 238);
+}
 
+.centerTable {
+    margin: 0px auto;
 }
 
 table tbody tr td {
     font-size: 17px;
 }
+
 select{
-margin-right: 0px;
- width: 220px;
-  height: 300px;
+    margin-right: 0px;
+    width: 220px;
+    height: 300px;
+}
+
+.homeButton{
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: #f7f7f7;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 80px;
+}
+
+.fa-home{
+    width: 20px;
+    height: 25px;
+    margin-top: 15px;
+}
+
+#symptom_checker_home{
+    background-color: #eeb96a;
+}
+
+.table-form{
+    background-color: white;
+    height: 50%;
+    width:50%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: black;
+}
+
+table, th, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+tr > th
+{
+    text-align: center;
+    padding:10px;
+    background-color: #F0F8FF;
+    color: black;
+    height: 50px;
+}
+
+tr:nth-child(even){
+    background-color:  #F0F8FF;
+}
+
+tr:nth-child(even):hover{
+    background-color:  #D4D7FF;
+}
+
+tr:nth-child(odd){
+    background-color: #d885b6;
+}
+
+tr:nth-child(odd):hover{
+    background-color: #da57a3;;
 }
