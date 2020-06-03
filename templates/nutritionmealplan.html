@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Live+ </title>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"   crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link href="{{ url_for('static', filename='css/nutritionmealplan.css') }}" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/nmp1.png" alt="live+plus" ></img>
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>Here you can find nutrients count in any ingredients or dish and meal healthy meal plan for a week<br>
+                          Please click one of the buttons below!!!!</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="/" class="homeButton" id="symptom_checker_home"><i  class="fa fa-home fa-2x"></i></a>
+        </div>
+<center>
+        <a href="/live+/nutrition">
+            <div class="module1 mid">
+                <h2>Nutrients</h2>
+            </div>
+        </a>
+        <a href="/live+/mealplan">
+            <div class="module2 mid">
+                 <h2 style="color:black">Meal Plan</h2>
+            </div>
+        </a>
+
+</center>
+    </body>
+</html>
