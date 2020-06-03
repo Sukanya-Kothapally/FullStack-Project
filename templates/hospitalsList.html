@@ -1,38 +1,62 @@
-<html>
-<head><title>LOACTION</title>
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Park Locations</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--  <link rel = "stylesheet" type = "text/css" href = "/static/hospitalsList.css?q=1547330602.31" >-->
-    <link href="{{ url_for('static', filename='css/hospitalsList.css') }}" rel="stylesheet">
+   <link rel = "stylesheet" type = "text/css" href = "/static/css/hospitalsList.css" >
+
 </head>
-<body>
+<body class="background">
+<!-- <header>
+        <div>
+            <a href="/live+/recreation/" class="home" id="home"><button class="homebtn"><i class="fa fa-home"></i> Home </button></a>
+        </div>
+ </header>-->
 
-<div class="container">
-<h2> hospitals near {{locationfromhtml}}</h2>
-    <table class="table" >
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/hospitals1.png" alt="heartimage" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>Hospitals to the given location are below...!!!</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div>
+            <a href="/live+/location/" aria-label="abcd" class="homeButton" id="hospital_location"><i  class="fa fa-home fa-2x"></i></a>
+    </div>
+ <div class="container">
+     <h3> Hospitals near {{locationfromhtml}}....!!!</h3><br>
+     <table class="table">
+         <tr class="headings">
+             <th>Hospital Name</th>
+             <th>Address</th>
+             <th>Ratings</th>
+             <th>Directions</th>
 
-        {% for i in res %}
-        <tr class="table-row">
-            <td> {{ i[0] }} </td>
-        </tr>
-        <tr class="table-row">
-            <td> Address: {{ i[1] }} </td>
-        </tr>
-        <tr class="table-row">
-            <td> Total number of user ratings: {{ i[2] }} </td>
-        </tr>
-        <tr class="table-row">
-            <td> Rating: {{ i[3] }} </td>
-        </tr>
-        <tr class="table-row">
-            <td><a href="https://www.google.com/maps/search/?api=1&query={{ i[0] }}">Follow me for directions</a> </td>
-        </tr>
+         </tr>
+         {% for val in res %}
+         <tr>
+            <td> {{ val[0] }} </td>
+            <td> {{ val[1] }} </td>
+             <td> {{ val[2] }} </td>
+             <td><a href="https://www.google.com/maps/search/?api=1&query={{ val[0] }}">Click Here</a> </td>
+         </tr>
         {% endfor %}
      </table>
-</div>
-<!--<div>{{res}}</div>-->
+ </div>
+<!--<div>{{location}}</div>-->
 </body>
 </html>

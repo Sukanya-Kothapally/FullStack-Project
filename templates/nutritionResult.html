@@ -1,20 +1,62 @@
-<html>
+<html lang="en">
 <head><title>HospitalLocations</title>
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--    <link rel = "stylesheet" type = "text/css" href = "/static/css/locationform.css?q=1547330602.31" >-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel = "stylesheet" type = "text/css" href = "/static/css/nutritionResult.css?q=1547330602.31" >
 </head>
 <body>
-<div class="container">
+ <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/nutrients.png" alt="live+ photo" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>Below is the Nutrients count to the given item</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ </div>
+ <div>
+            <a href="/live+/nutrition/" aria-label="abcd" class="homeButton" id="symptom_checker_home"><i  class="fa fa-home fa-2x"></i></a>
+    </div>
+<div class="container" id="results">
+    <h3> Here is your nutrients count..! </h3>
+    <br>
+    <!--<table class="table">
+        <tr>
+            <td>Calories:</td>
+            <td>{{res[0]}}</td>
+        </tr>
+         <tr>
+            <td>Protein:</td>
+            <td>{{res[1]}}</td>
+        </tr>
+         <tr>
+            <td>Carbs:</td>
+            <td>{{res[2]}}</td>
+        </tr>
+    </table>-->
+    <div id="data">
+        <p>Calories: {{res[0]}}calories </p>
+        <p>Protein: {{res[1]}}g </p>
+        <p>Carbs: {{res[2]}}g</p>
+        <p>Fat: {{res[3]}}g</p>
 
-    <div>calories {{res[0]}}</div>
-    <div> protein {{res[1]}}</div>
-    <div> carbs {{res[2]}}</div>
-<!--    <div>{{res}}</div>-->
-
+    </div>
+</div>
+<div class="joke">
+    <h3>Just for fun :)</h3>
+    <br>
+    <p>{{joke_result}}</p>
 </div>
 </body>
 </html>

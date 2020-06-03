@@ -2,36 +2,54 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title> Live+ </title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"   crossorigin="anonymous"></script>
+        <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
         <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+
     </head>
-    <body onload="initialise()">
-        <br>
-        <div class="container">
-           <div class="card" id="card">
-        <h1>LIVE+</h1>
-        </div>
-            <center>
-                <br><br>
-                <h2>LIVE+</h2>
-                <div><i>LIVE+ is a symptom checking application, where the user gives the symptom, along with his age.<br> The Application returns the list of diseases for the symptoms mentioned.<br>Please click one of the buttons below!!!!</i></div>
-                <br><br>
-                <button type="button"  class="btn" id="first" style="height:200px;width:200px" onclick="location.href='/live+/one';"> </br> <span> This  gives you the information about the nearest doctors which could have</span></button>
-                <button type="button"  class="btn" id="second" style="height:200px;width:200px" onclick="location.href='/live+/location';">Click here >> </br> <span>To find list of hospitals near by your location</span></button>
-                <button type="button"  class="btn" id="third" style="height:200px;width:200px" onclick="location.href='/live+/nutrition';"> FInd nutritions in dish</button>
+    <body>
 
-
-            </center>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="static/images/live+.png" alt="" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>LIVE+ is a symptom checking application, where the user gives the symptom, along with his age.<br>
+                          The Application returns the list of diseases for the symptoms mentioned.<br>
+                          Please click one of the buttons below!!!!</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <center><img src="static/images/plusicon.jpg" alt="plUSSYMBOL" id="plusimg"></center>
-        <br>
+<center>
+        <a href="/live+/symptom-checker">
+            <div class="module1 mid">
+                <h2>Symptom Checker</h2>
+            </div>
+        </a>
+        <a href="/live+/location">
+            <div class="module2 mid">
+                 <h2>Find Hospitals</h2>
+            </div>
+        </a>
+        <a href="/live+/location">
+            <div class="module1 mid">
+                 <h2>Parks and Recreation</h2>
+            </div>
+        </a>
+        <a href="/live+/nutritionmealplan">
+            <div class="module4 mid">
+                 <h2>Meal Plan & Nutrients</h2>
+            </div>
+        </a>
+</center>
     </body>
 </html>
-
-
