@@ -1,33 +1,77 @@
 .center {
   background: black;
-  max-height: 350px;
+  max-height: 300px;
   color: white;
   font-weight: bold;
+  font-family:Andale Mono, monospace;
+
+}
+.center h1{
+font-family:Stencil Std, fantasy;
+font-size:500%;
 }
 .center img{
  opacity: 0.5;
  height: auto;
  display:block;
-  width: 100%;
+ width: 100%;
 }
 .center img,
-.half-left  img,
-.half-right img {
+ {
   height: auto;
   width: 100%;
 }
+@media (min-width: 481px){
 .center{
     overflow: hidden;
     padding: 0;
     position: responsive;
 }
 .center  > .container{
-position: absolute;
+    position: absolute;
     top: 0;
 
 }
-.center > .container { right: 0;}
+.center > .container {
+    right: 0;
+}
+}
+#first{
+    text-align: top;
+    background-color: #f5b1b1;
+}
+#first:hover{
+    background-color:rgb(214, 84, 61);
+}
+#second{
 
+    background-color: #c1f0a7;
+    text-align: center;
+}
+#second:hover{
+    background-color: rgb(169, 238, 113);
+
+}
+
+#third{
+
+    background-color: #9ca1f0;
+    text-align: center;
+}
+#third:hover{
+    background-color:#5562f1;
+
+}
+
+#fourth{
+
+    background-color: #e9eb93;
+    text-align: center;
+}
+#fourth:hover{
+    background-color:#f0de42;
+
+}
 
 @font-face {
   font-family: 'Roboto';
@@ -151,29 +195,39 @@ position: absolute;
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 10px 6px 6px 6px;
+  margin: 50px 6px 50px 6px;
   position: relative;
-  float: left;
+  display: inline-block;
   padding-bottom: 50px;
 }
 a:hover {
   opacity: 0.3;
 }
-
+.mid h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: Black;
+  text-transform: uppercase;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+}
 .module2 {
   background:
     linear-gradient(
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
-    url('/static/images/symptom-checker.jpg');
+    url('/static/images/hospitals.png');
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 10px 6px 6px 6px;
+  margin: 50px 6px 50px 6px;
   position: relative;
-  float: left;
-
+  display: inline-block;
 }
 .module3 {
   background:
@@ -185,36 +239,21 @@ a:hover {
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 10px 6px 6px 6px;
+  margin: 50px 6px 50px 6px;
   position: relative;
-  float: left;
+  display: inline-block;
 }
-
 .module4 {
   background:
     linear-gradient(
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
-    url('/static/images/symptom-checker.jpg');
+    url('/static/images/nmp1.png');
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 10px 6px 6px 6px;
+  margin: 50px 6px 50px 6px;
   position: relative;
-  float: left;
-
-}
-
-.mid h2 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  color: black;
-  text-transform: uppercase;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 2rem;
-  transform: translate(-50%, -50%);
+  display: inline-block;
 }

@@ -27,7 +27,7 @@ def locationforparks():
 def parks_data():
         recDict=rec.fetch()
         locationfromhtml=rec.locationfunction()
-        if(recDict=="No Location given, Please give a place!!!"):
+        if(recDict=="No Location given, Please give a cityname!"):
             return render_template("recreationform.html", recDict=recDict)
         else:
             Dictstr=json.dumps(recDict)

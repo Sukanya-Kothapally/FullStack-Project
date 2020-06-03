@@ -1,38 +1,79 @@
+
 .center {
   background: black;
-  max-height: 350px;
+  max-height: 300px;
   color: white;
   font-weight: bold;
+  font-family:Andale Mono, monospace;
+
+}
+.center h1{
+font-family:Stencil Std, fantasy;
+font-size:500%;
 }
 .center img{
  opacity: 0.5;
  height: auto;
  display:block;
-  width: 100%;
+ width: 100%;
 }
 .center img,
-.half-left  img,
-.half-right img {
+ {
   height: auto;
   width: 100%;
 }
+@media (min-width: 481px){
 .center{
     overflow: hidden;
     padding: 0;
     position: responsive;
 }
 .center  > .container{
-position: absolute;
- top: 0;
+    position: absolute;
+    top: 0;
 
 }
-.center > .container
-{
-  right: 0;
+.center > .container {
+    right: 0;
 }
+}
+.container
+{
+    padding-top: 50px;
+}
+
+header{
+background-color:black;
+}
+
+.homeButton{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f7f7f7;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 80px;
+}
+.homeButton:hover{
+color:white;
+}
+.fa-home{
+    width: 20px;
+    height: 25px;
+    margin-top: 15px;
+}
+#park_location_home:hover{
+background-color: black;
+}
+i{
+font-size: larger;}
+
 .container2
 {
     padding-top: 100px;
+
 }
 .form-group{
     background-color: black;
@@ -40,8 +81,8 @@ position: absolute;
     width:40%;
     margin: 0 auto;
     padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-bottom: 50px;
     color: white;
     box-shadow:0 4px 8px 0 #d885b6, 0 6px 20px 0 #d885b6;
@@ -49,32 +90,26 @@ position: absolute;
 .form-group:hover{
     background-color: #413f40;
 }
-
-
-.button{
+.form-group > .button{
 color:black;
 cursor:pointer;
 height:40px;
 width:100px;
 }
-.button:hover{
-background-color:#d885b6;
+.form-group > .button:hover{
+background-color:rgb(250, 184, 206);
 }
-
  #noloc{
  font-style:italic;
  font-size: medium;
+ font-weight: bold;
  }
+ input {
+    min-width: 100%;
+    max-width: 100%;
+}
 
 
- /*.homebtn
-{
-    background-color:rgb(255, 166, 166);
-    color: black;
-    padding: 12px 16px;
-    font-size: small;
-    cursor: pointer;
-    position:absolute;
-    top:0;
-    left:0;
-  }*/
+
+
+
