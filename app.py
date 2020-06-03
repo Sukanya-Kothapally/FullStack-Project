@@ -1,20 +1,23 @@
 import json
-from flask import Flask, render_template, request
-from flask import render_template,make_response
-from flask import Flask, request, redirect, url_for
+from flask import Flask,render_template,request,make_response, jsonify
+from flask import redirect, url_for
+import hospitals as hs
+import nutrition as nt
+import mealplan as mp
 import googlemaps
 import get_symptoms as get_sym
 import symptoms_result as sym_res
+import recreation as rec
 
 app = Flask(__name__)
+flask_static_digest.init_app(app)
+
 
 # home page
 @app.route('/')
 def index():
     return render_template("index.html")
-
-
-#button2 home page
+  
 @app.route('/live+/location/', methods=['POST','GET'])
 def enterLocation():
         return render_template("locationform.html")
@@ -22,16 +25,52 @@ def enterLocation():
 #button2 resultspage
 @app.route("/live+/hospitalsresult/",methods=['POST','GET'])
 def locationHospital():
-        googleMaps = googlemaps.Client(key='AIzaSyAQO23hWoMorbHodnChbFZ42g-BiGEcSqM') #connecting to google
-        location = request.form["location"]  # getting address entered by user in form
-        geocoding_result = googleMaps.geocode(location)
+    hosDict = hs.fetch()
+    locationfromhtml = hs.locationfunction()
+    if (hosDict == "No Location given, Please give a place!!!"):
+        return render_template("locationform.html", res=hosDict)
+    else:
+        Dictstr = json.dumps(hosDict)
+        resultsdata = json.loads(Dictstr)
+        return render_template("hospitalsList.html", res=resultsdata, locationfromhtml=locationfromhtml)
 
-        locationLatLng=[(float(i['geometry']['location']['lat']), float(i['geometry']['location']['lng'])) for i in geocoding_result] #extracting latitude and longitude using the address enetered by user
-        result=googleMaps.places(query="hospital", location=locationLatLng[0], radius = '100')['results'] #getting the name of hospitals near the address entered by user
+@app.route('/live+/nutritionmealplan')
+def selectOne():
+    return render_template("nutritionmealplan.html")
 
-        hospitalResult=[[str(r['name']),str(r['formatted_address']),str(r['user_ratings_total']), str(r['rating'])] for r in result]
-        return render_template("hospitalsList.html", res=hospitalResult)
+@app.route('/live+/nutrition/', methods=['POST','GET'])
+def giveDetails():
+    return render_template("nutrition.html")
 
+@app.route('/live+/nutrition/result', methods=['POST', 'GET'])
+def giveResult():
+    data = nt.nutrition()
+    joke = nt.food_jokes()
+    return render_template("nutritionResult.html", res=data, joke_result= joke)
+
+@app.route('/live+/mealplan',methods=['POST', 'GET'])
+def mealplan():
+    return render_template("mealPlan.html")
+
+@app.route('/live+/mealplan/result',methods=['POST', 'GET'])
+def mealplanresult():
+    data = mp.mealPlan()
+    return render_template("mealPlanResults.html",res = data)
+
+@app.route('/live+/recreation/', methods=['POST','GET'])
+def locationforparks():
+        return render_template("recreationform.html")
+
+@app.route("/live+/recreationdata/",methods=['POST','GET'])
+def parks_data():
+        recDict=rec.fetch()
+        locationfromhtml=rec.locationfunction()
+        if(recDict=="No Location given, Please give a cityname!"):
+            return render_template("recreationform.html", recDict=recDict)
+        else:
+            Dictstr=json.dumps(recDict)
+            resultsdata=json.loads(Dictstr)
+            return render_template("recreation.html", resultsdata=resultsdata,locationfromhtml=locationfromhtml)
 
 @app.route('/live+/symptom-checker')
 def symptomChecker():
@@ -45,5 +84,6 @@ def symptomCheckerResult():
     fetch_api_result_dict = json.dumps(fetch_api_result)
     return fetch_api_result_dict
   
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,113 @@
+<!--
+<html>
+<head><title>LOACTION</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+&lt;!&ndash;  <link rel = "stylesheet" type = "text/css" href = "/static/hospitalsList.css?q=1547330602.31" >&ndash;&gt;
+    <link href="{{ url_for('static', filename='css/hospitalsList.css') }}" rel="stylesheet">
+</head>
+<body class="background">
+<div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/live+.png" alt="heartimage" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>Your meal plan for a week!!!</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="container">
+    <table class="table" >
+        <tr class="headings">
+             <th>Day </th>
+             <th>Slot No</th>
+             <th>Meal</th>
+
+         </tr>
+
+        {% for i in res %}
+        <tr class="table-row">
+            <td>day {{ i[0] }} </td>
+            <td>slot {{i[1]}}</td>
+            <td> meal {{ i[2] }} </td>
+            </br>
+        </tr>
+
+        {% endfor %}
+     </table>
+</div>
+</body>-->
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Park Locations</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel = "stylesheet" type = "text/css" href = "/static/css/hospitalsList.css" >
+
+</head>
+<body class="background">
+<!-- <header>
+        <div>
+            <a href="/live+/recreation/" class="home" id="home"><button class="homebtn"><i class="fa fa-home"></i> Home </button></a>
+        </div>
+ </header>-->
+
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/nutrients.png" alt="heartimage" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>Your meal plan for a week!!!</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div>
+            <a href="/live+/mealplan" aria-label="abcd" class="homeButton" id="hospital_location"><i  class="fa fa-home fa-2x"></i></a>
+    </div>
+ <div class="container">
+     <h3> Meal Plan</h3><br>
+     <table class="table">
+         <tr class="headings">
+             <th>Day</th>
+             <th>Slot</th>
+             <th>Meal name</th>
+
+         </tr>
+          {% for i in res %}
+         <tr>
+
+            <td> {{ i[0] }} </td>
+            <td> {{ i[1] }} </td>
+             <td> {{ i[2] }} </td>
+
+         </tr>
+          {% endfor %}
+
+     </table>
+ </div>
+<!--<div>{{location}}</div>-->
+</body>
+</html>

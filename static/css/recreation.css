@@ -1,0 +1,136 @@
+.center {
+  background: black;
+  max-height: 30%;
+  color: white;
+  font-weight: bold;
+  font-family:Andale Mono, monospace;
+}
+.col-xs-12 {
+    width: 100%;
+    height: 300px;
+    padding-bottom: 30px;
+}
+.center h1{
+font-family:Stencil Std, fantasy;
+font-size:500%;
+}
+.center img{
+ opacity: 0.5;
+ height: auto;
+ display:block;
+ width: 100%;
+}
+.center img,
+ {
+  height: auto;
+  width: 100%;
+}
+@media (min-width: 481px){
+.center{
+    overflow: hidden;
+    padding: 0;
+    position: responsive;
+}
+.center  > .container{
+    position: absolute;
+    top: 0;
+
+}
+.center > .container {
+    right: 0;
+}
+}
+.homeButton{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f7f7f7;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 80px;
+
+}
+.homeButton:hover{
+color:white;
+}
+
+.fa-home{
+    width: 20px;
+    height: 25px;
+    margin-top: 15px;
+}
+.center > .container
+{
+  padding-left:90px;
+}
+
+i{
+font-size: larger;}
+.container
+{
+    padding-top: 50px;
+}
+#park_data_home:hover{
+background-color: black;
+}
+
+.homebtn {
+background-color:black;
+color: white;
+padding: 12px 16px;
+font-size: large;
+cursor: pointer;
+top:0;
+left:0;
+border-color: black;
+}
+
+.headings{
+font-style:Bold;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+th
+{
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 50px;
+}
+tr:nth-child(even)
+{
+background-color: #FFFFE0;
+}
+tr:nth-child(even):hover
+{
+background-color: 	#F0E68C;
+}
+tr:nth-child(odd)
+{
+background-color: #F5DEB3;
+}
+tr:nth-child(odd):hover
+{
+background-color:#DEB887;
+}
+h3{
+text-align:center;
+font-style:bold;
+text-shadow: 0px 11px 10px rgba(81,67,21,1);
+}
+td{
+font-weight: bold;
+height: 50px;
+vertical-align: bottom;
+}
+a{
+color:black;
+}
+td > a:hover{
+color:#21a53e;
+}
+

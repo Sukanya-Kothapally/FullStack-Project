@@ -5,7 +5,9 @@ import hmac
 import json
 
 # Generating token for APIMEDIC.
-def token_gen():
+
+
+def tokenGen():
     username = config.username
     password = config.password
     authUrl = config.priaid_auth_url

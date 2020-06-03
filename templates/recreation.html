@@ -7,49 +7,48 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <link rel = "stylesheet" type = "text/css" href = "/static/css/hospitalsList.css" >
+   <link rel = "stylesheet" type = "text/css" href = "/static/css/recreation.css" >
 
 </head>
 <body class="background">
-<!-- <header>
-        <div>
-            <a href="/live+/recreation/" class="home" id="home"><button class="homebtn"><i class="fa fa-home"></i> Home </button></a>
-        </div>
- </header>-->
+            <!--<header>
+                <a href="/live+/recreation/" class="home" id="home"><button id="homebtn" class="homebtn"><i class="fa fa-home"></i> Home </button></a>
+            </header>-->
 
     <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 center">
-                    <img class="img-responsive" src="/static/images/hospitals1.png" alt="heartimage" >
+                    <img class="img-responsive" src="/static/images/park.jpg" alt="heartimage" >
                     <div class="container">
                         <div class="row">
                             <br><br>
                             <center>
                             <h1>Live +</h1>
-                            <p><i>Hospitals to the given location are below...!!!</i>
+                            <p><i>Parks or trails to the given location are below...!!!</i>
                             </p>
                             </center>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    <div>
-            <a href="/live+/location/" aria-label="abcd" class="homeButton" id="hospital_location"><i  class="fa fa-home fa-2x"></i></a>
-    </div>
+        </div>
+             <div>
+            <a href="/live+/recreation/" aria-label="houseimage" class="homeButton" id="park_data_home"><i  class="fa fa-home fa-2x"></i></a>
+        </div>
  <div class="container">
-     <h3> Hospitals near {{locationfromhtml}}....!!!</h3><br>
+     <h3> Parks or Trails near {{locationfromhtml}}....!!!</h3><br>
      <table class="table">
          <tr class="headings">
-             <th>Hospital Name</th>
+             <th>Park Name</th>
              <th>Address</th>
              <th>Ratings</th>
              <th>Directions</th>
 
          </tr>
-         {% for val in res %}
+         {% for val in resultsdata %}
          <tr>
             <td> {{ val[0] }} </td>
+            <!-- <td></td>-->
             <td> {{ val[1] }} </td>
              <td> {{ val[2] }} </td>
              <td><a href="https://www.google.com/maps/search/?api=1&query={{ val[0] }}">Click Here</a> </td>
@@ -60,3 +59,4 @@
 <!--<div>{{location}}</div>-->
 </body>
 </html>
+
