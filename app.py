@@ -59,7 +59,7 @@ def mealplan():
 @app.route('/live+/mealplan/result',methods=['POST', 'GET'])
 def mealplanresult():
     data = mp.mealPlan()
-    return render_template("mealPlanResults.html",res = data
+    return render_template("mealPlanResults.html",res = data)
 
 @app.route('/live+/recreation/', methods=['POST','GET'])
 def locationforparks():
@@ -69,7 +69,7 @@ def locationforparks():
 def parks_data():
         recDict=rec.fetch()
         locationfromhtml=rec.locationfunction()
-        if(recDict=="No Location given, Please give a place!!!"):
+        if(recDict=="No Location given, Please give a cityname!"):
             return render_template("recreationform.html", recDict=recDict)
         else:
             Dictstr=json.dumps(recDict)
