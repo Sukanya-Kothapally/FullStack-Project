@@ -1,0 +1,91 @@
+<!--<html>-->
+<!--<head><title>LOACTION</title>-->
+<!--<meta charset="utf-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--&lt;!&ndash;  <link rel = "stylesheet" type = "text/css" href = "/static/hospitalsList.css?q=1547330602.31" >&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="{{ url_for('static', filename='css/hospitalsList.css') }}" rel="stylesheet">&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+
+<!--    <form class ="form" action="/live+/recipe/result" method="POST">-->
+<!--        <label for="diet">Choose a diet:</label>-->
+<!--        <select name="diet" id="diet">-->
+<!--            <option value="vegetarian">Vegetarian</option>-->
+<!--            <option value="vegan">Vegan</option>-->
+<!--            <option value="nonveg">Non Veg</option>-->
+<!--        </select>-->
+<!--        <label for="exclude"> Choose your exclude ingridient</label>-->
+<!--        <input type="text" id="exclude" name="exclude"></input>-->
+<!--        <label for="calories">Preffered calories amount</label>-->
+<!--        <input type="number" id="calories" name="calories"></input>-->
+<!--        <button type="submit">Submit</button>-->
+
+<!--    </form>-->
+
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head><title>SEARCH</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+   <link rel = "stylesheet" type = "text/css" href = "/static/css/mealPlan.css" >
+
+</head>
+<body>
+   <!-- <header>
+        <div>
+            <a href="/" class="home" id="home"><button class="homebtn"><i class="fa fa-home"></i> Home </button></a>
+        </div>
+    </header>-->
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/nutrients.png" alt="heartimage" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                            <h1>Live +</h1>
+                            <p><i>Find your happy and healty meal plan for a week!!</i>
+                            </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+   <div>
+            <a href="/live+/nutritionmealplan" aria-label="abcd" class="homeButton" id="symptom_checker_home"><i  class="fa fa-home fa-2x"></i></a>
+    </div>
+    <div class="container2">
+        <form class ="form-group" action="/live+/mealplan/result" method="POST">
+
+         <h3>Give us your preferences</h3>
+            <br>
+        <label for="diet">Choose a diet:</label>
+
+        <select class="black"name="diet" id="diet">
+            <option class="black" value="vegetarian">Vegetarian</option>
+            <option class="black" value="vegan">Vegan</option>
+            <option class="black" value="nonveg">Non Veg</option>
+        </select><br>
+            <br>
+        <label for="exclude"> Choose your exclude ingridient</label>
+            <input class="black" type="text" id="exclude" name="exclude"></input><br>
+            <br>
+        <label class="calories" for="calories">Preffered calories amount </label>
+        <input class="black"class="input" type="number" id="calories" name="calories"></input><br>
+            <br>
+        <button class="button" type="submit">Submit</button>
+
+    </form>
+    </div>
+</body>
+</html>
