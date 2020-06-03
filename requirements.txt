@@ -11,5 +11,5 @@ requests ==2.20.1
 scraper ==0.1.0
 selenium ==3.14.1
 urllib3 ==1.23
+spoonacular
 googlemaps==3.0.2
-

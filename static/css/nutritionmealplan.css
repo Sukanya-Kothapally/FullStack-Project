@@ -1,10 +1,14 @@
 .center {
   background: black;
-  max-height: 400px;
+  max-height: 30%;
   color: white;
   font-weight: bold;
   font-family:Andale Mono, monospace;
-
+}
+.col-xs-12 {
+    width: 100%;
+    height: 300px;
+    padding-bottom: 30px;
 }
 .center h1{
 font-family:Stencil Std, fantasy;
@@ -35,6 +39,28 @@ font-size:500%;
 .center > .container {
     right: 0;
 }
+}
+.homeButton{
+
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f7f7f7;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 80px;
+}
+.homeButton:hover{
+background-color:black;
+}
+.fa-home{
+    width: 20px;
+    height: 25px;
+    margin-top: 15px;
+}
+#symptom_checker_home:hover{
+background-color: white;
 }
 #first{
     text-align: top;
@@ -191,14 +217,15 @@ font-size:500%;
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
-    url('/static/images/symptom-checker.jpg');
+    url('/static/images/nutrients.png');
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 20px 6px 40px 6px;
+  margin: 70px 6px 6px 6px;
   position: relative;
   display: inline-block;
   padding-bottom: 50px;
+  padding-left: 20px;
 }
 a:hover {
   opacity: 0.3;
@@ -221,39 +248,12 @@ a:hover {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
-    url('/static/images/hospitals1.png');
+    url('/static/images/nutrients.png');
   background-size: cover;
   width: 300px;
   height: 200px;
-  margin: 20px 6px 40px 6px;
+  margin: 70px 6px 6px 6px;
   position: relative;
   display: inline-block;
-}
-.module3 {
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.1)
-    ),
-    url('/static/images/park.jpg');
-  background-size: cover;
-  width: 300px;
-  height: 200px;
-  margin: 20px 6px 40px 6px;
-  position: relative;
-  display: inline-block;
-}
-.module4 {
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.1)
-    ),
-    url('/static/images/nmp1.png');
-  background-size: cover;
-  width: 300px;
-  height: 200px;
-  margin: 20px 6px 40px 6px;
-  position: relative;
-  display: inline-block;
+
 }
