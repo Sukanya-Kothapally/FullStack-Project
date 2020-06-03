@@ -6,6 +6,7 @@ import nutrition as nt
 import mealplan as mp
 import googlemaps
 import get_symptoms as get_sym
+import symptoms_result as sym_res
 import recreation as rec
 
 app = Flask(__name__)
@@ -16,11 +17,6 @@ flask_static_digest.init_app(app)
 @app.route('/')
 def index():
     return render_template("index.html")
-
-@app.route('/live+/symptom-checker')
-def two():
-    symptoms = get_sym.fetch_symptoms()
-    return render_template("symptom-checker.html", symptoms=symptoms)
   
 @app.route('/live+/location/', methods=['POST','GET'])
 def enterLocation():
@@ -75,6 +71,19 @@ def parks_data():
             Dictstr=json.dumps(recDict)
             resultsdata=json.loads(Dictstr)
             return render_template("recreation.html", resultsdata=resultsdata,locationfromhtml=locationfromhtml)
+
+@app.route('/live+/symptom-checker')
+def symptomChecker():
+    symptoms = get_sym.fetch_symptoms()
+    return render_template("symptom-checker.html", symptoms=symptoms)
+
+@app.route('/live+/symptom-checker-result', methods=['POST'])
+def symptomCheckerResult():
+    data = request.get_json()
+    fetch_api_result = sym_res.api_symptom_result(data["id"], data["gender"], data["year"])
+    fetch_api_result_dict = json.dumps(fetch_api_result)
+    return fetch_api_result_dict
+  
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Live+|Symptom-checker</title>
+        <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="{{ url_for('static', filename='css/symptom-checker.css') }}" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+        <script>
+            function hidetable()
+            {
+                $('#show-hide').hide();
+            }
+            var gender, year, ID;
+            function genderFunc(value) {
+                gender = value;
+            }
+            function apiCall()
+            {
+                $("#tbody tr").remove();
+                year = document.getElementById('year').value;
+                ID = document.getElementById('ID').value;
+                var values=['{"id":"' + ID + '","year":"' + year + '","gender":"' + gender + '"}'];
+                json_format = JSON.parse(values);
+                $.ajax({
+                        type: "POST",
+                        url: '/live+/symptom-checker-result',
+                        contentType: "application/json",
+                        data: JSON.stringify(json_format),
+                        dataType: "json",
+                        success: function(data) {
+                            $('#show-hide').show();
+                            row = "";
+                            for(var value in data)
+                            {
+                                row += "<tr><td>" + data[value] + "</td><td>" + value +"</td></tr>";
+                            }
+                            $('#tbody').append(row);
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+            }
+        </script>
+    </head>
+    <body onload="hidetable()">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <img class="img-responsive" src="/static/images/symptom-checker1.jpg" alt="" >
+                    <div class="container">
+                        <div class="row">
+                            <br><br>
+                            <center>
+                                <h1>Live +</h1>
+                                    <h2>Symptom-Checker</h2>
+                                <p><i>Symptom Checker is designed to help you understand what your medical symptoms could mean,<br> and provide you with preliminary diagnosis.
+                              </i>
+                                </p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="/" class="homeButton" aria-label="homeButton" id="symptom_checker_home"><i  class="fa fa-home fa-2x"></i></a>
+        </div>
+        <form class="main-form">
+            <div class="md-form">
+                <label for="mySelect" class="">Select Symptoms:</label>
+                <select id="mySelect" onchange="getId();" class="form-control selectpicker" multiple data-live-search="true" style="overflow-y: scroll; height: 5px;">
+                        {% for name, id in symptoms.items() %}
+                            <option data-tokens={{name}} value={{id}}>{{name}}</option>
+                        {% endfor %}
+                </select>
+            </div>
+            <br>
+            <script>
+            function getId() {
+                var options = document.getElementById("mySelect");
+                 var result = [];
+                var opt;
+                for (var i=0, iLen=options.length; i<iLen; i++) {
+                    opt = options[i];
+                    if (opt.selected) {
+                        result.push(opt.value || opt.text);
+
+                    }
+
+                }
+
+                var ids=result.join(',');
+                $("#ID").val(ids);
+            }
+        </script>
+            <div class="md-form" hidden >
+                <input type="text" id="ID" class="form-control">
+                <label for="ID" class="">Symptom ID:</label>
+            </div>
+
+            <div class="md-form" >
+                <label for="year" class="">Year of Birth:</label>
+                <input type="number" id="year" class="form-control" required>
+            </div>
+
+            <br>
+            <form class="form-group">
+                <center>
+                <fieldset id="gender" class="form-group">
+                    <label for="male" class="">
+                    <input type="radio" id="male" name="gender" value="male" onclick="genderFunc(this.value)"> Male
+                    </label>
+                    <label for="female" class="">
+                    <input type="radio" id="female" name="gender" value="female" onclick="genderFunc(this.value)"/> Female
+                    </label><br>
+                </fieldset>
+                    </center>
+                <br>
+            </form>
+
+            <center>
+            <div class="md-form">
+                <button class="btn submitButton addButton"  value="Submit" onclick="apiCall()">Submit</button>
+            </div>
+            </center>
+        </form>
+
+        <form class="table-form" id="show-hide">
+        <table  class="table-striped" >
+            <thead>
+                <tr>
+                    <th>Result</th>
+                    <th>Accuracy</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+            <br>
+            <a href='/live+/location/'>Find hospitals nearby?</a>
+            <br>
+            <br>
+        </form>
+    </body>
+</html>
