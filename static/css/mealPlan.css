@@ -1,0 +1,110 @@
+
+.center {
+  background: black;
+  max-height: 300px;
+  color: white;
+  font-weight: bold;
+  font-family:Andale Mono, monospace;
+
+}
+.center h1{
+font-family:Stencil Std, fantasy;
+font-size:500%;
+}
+.center img{
+ opacity: 0.5;
+ height: auto;
+ display:block;
+ width: 100%;
+}
+.center img,
+ {
+  height: auto;
+  width: 100%;
+}
+@media (min-width: 481px){
+.center{
+    overflow: hidden;
+    padding: 0;
+    position: responsive;
+}
+.center  > .container{
+    position: absolute;
+    top: 0;
+
+}
+.center > .container {
+    right: 0;
+}
+}
+.container2
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+.form-group{
+    background-color: black;
+    text-align: left;
+    width:40%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    color: white;
+    box-shadow:0 4px 8px 0 #5e3d1f, 0 6px 20px 0 #5e3d1f;
+}
+h3{
+text-align: center;}
+
+.black{
+color: black;}
+
+input {
+    min-width: 100%;
+    max-width: 100%;
+}
+.homeButton{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f7f7f7;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 80px;
+}
+.homeButton:hover{
+background-color:white;
+color:black;
+}
+.fa-home{
+    width: 20px;
+    height: 25px;
+    margin-top: 15px;
+}
+
+
+.button{
+color:black;
+cursor:pointer;
+height:30px;
+width:70px;
+text-align:center;
+display: block;
+margin: 0 auto;
+}
+.button:hover{
+background-color:#5e3d1f;
+color: white;
+}
+.calories{
+padding-right: 25px;}
+
+ #noloc{
+ font-style:italic;
+ font-size: medium;
+ }
+
+
