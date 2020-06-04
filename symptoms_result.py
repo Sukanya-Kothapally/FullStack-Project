@@ -3,7 +3,7 @@ import ast
 import config
 import urllib.request
 
-authKey = token.token_gen()
+authKey = token.tokenGen()
 
 def api_symptom_result(symptoms_ids, gender, year_of_birth):
     api_results_dict = {}

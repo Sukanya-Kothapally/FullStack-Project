@@ -3,7 +3,7 @@ import token_generator as token
 import urllib.request
 import ast
 
-authKey = token.token_gen()
+authKey = token.tokenGen()
 symptoms_dict = {'Name': [], 'ID': []}  # stores the name and id which will be passed on to the frontend
 symptoms = {}   # dictionary that will store the data as name:id
 symptoms_name = []   # This list of all sorted symptom names
