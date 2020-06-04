@@ -10,7 +10,6 @@ import symptoms_result as sym_res
 import recreation as rec
 
 app = Flask(__name__)
-flask_static_digest.init_app(app)
 
 
 # home page
