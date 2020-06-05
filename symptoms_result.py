@@ -3,9 +3,9 @@ import ast
 import config
 import urllib.request
 
-authKey = token.tokenGen()
 
 def api_symptom_result(symptoms_ids, gender, year_of_birth):
+    authKey = token.tokenGen()
     api_results_dict = {}
     get_symptoms_result = config.priaid_health_url + "/diagnosis?symptoms=[" + symptoms_ids + "]&gender=" + gender + "&year_of_birth=" + year_of_birth + "&token=" + authKey + "&format=json&language=en-gb"
     results = urllib.request.urlopen(get_symptoms_result).read()

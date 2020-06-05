@@ -3,13 +3,13 @@ import token_generator as token
 import urllib.request
 import ast
 
-authKey = token.tokenGen()
 symptoms_dict = {'Name': [], 'ID': []}  # stores the name and id which will be passed on to the frontend
 symptoms = {}   # dictionary that will store the data as name:id
 symptoms_name = []   # This list of all sorted symptom names
 ids = []
 
 def fetch_symptoms():
+    authKey = token.tokenGen()
     url = config.priaid_health_url + '/symptoms?token=' + authKey + '&format=json&language=en-gb'
     results_symptoms = urllib.request.urlopen(url).read()
     json_symptoms = ast.literal_eval(results_symptoms.decode("utf-8"))    # converting the byte string to string type
